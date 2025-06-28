@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import Cart, Products, Ratings, Orders
+from .models import Cart, Products, Ratings, Orders, HomePageImages
 
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta(object):
@@ -28,6 +28,12 @@ class CartSerializer(serializers.ModelSerializer):
         model = Cart
         fields = "__all__"
 
+class CartGetSerializer(serializers.ModelSerializer):
+    product = ProductSerializer()
+    class Meta:
+        model = Cart
+        fields = "__all__"
+
 class RatingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ratings
@@ -37,3 +43,8 @@ class OrdersSerializer(serializers.ModelSerializer):
     class Meta:
         model = Orders
         fields = "__all__"
+
+class HomePageImagesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HomePageImages
+        fields="__all__"

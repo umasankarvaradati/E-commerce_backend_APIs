@@ -30,3 +30,8 @@ class Orders(models.Model):
     product = models.ForeignKey(Products, on_delete=models.PROTECT)
     quantity = models.IntegerField()
     date = models.DateField()
+
+class HomePageImages(models.Model):
+    id = models.AutoField(primary_key=True,unique=True)
+    image = models.ImageField(upload_to='products/')
+    category = models.CharField(max_length=100)
