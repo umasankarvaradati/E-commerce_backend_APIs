@@ -10,7 +10,7 @@ from rest_framework.permissions import IsAuthenticated
 
 TOKEN_EXPIRY_DURATION = 60 * 60 * 60  # Token expiry duration in seconds (1 hour)
 
-class UserLogin(APIView):     #added by venu
+class UserLogin(APIView):    
     def post(self, request):
         username = request.data.get('username')
         password = request.data.get('password')
